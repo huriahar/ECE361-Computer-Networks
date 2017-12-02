@@ -1,0 +1,28 @@
+We implemented the following additional feature(s):
+DESIGN:
+- A client can log into multiple sessions and be a part of multiple sessions at the same time
+- When sending a message to a particular session, the client has
+  to type in: <session_id>: <message> Note the space after the
+  colon
+- A client can leave a session by typing leavesession <session_id>
+- Other commands like login, quit, createsession, logout remain 
+  unchanged.
+
+Example Run:
+Terminal 1-
+server 4950
+
+Terminal 2-
+/login bob BOB 127.0.0.1 4950
+/createsession haha
+
+Terminal 3-
+/login alice ALICE 127.0.0.1 4950
+/joinsession haha
+
+Terminal 4-
+/login cathy CATHY 127.0.0.1 4950
+/joinsession haha
+/createsession hello
+haha: How is it going?
+/leavesession haha
